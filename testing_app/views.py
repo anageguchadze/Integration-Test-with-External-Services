@@ -17,7 +17,7 @@ class EventListView(APIView):
         if not cached_events:
             events = Event.objects.all()
             serializer = EventSerializer(events, many=True)
-            cache.set('events', serializer.data, timeout=600)  # 10 წუთი
+            cache.set('events', serializer.data, timeout=600)  
             return Response(serializer.data, status=status.HTTP_200_OK)
 
         return Response(cached_events, status=status.HTTP_200_OK)
