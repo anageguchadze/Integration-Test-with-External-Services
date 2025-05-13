@@ -1,11 +1,9 @@
 from django.core.cache import cache
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
 from .models import Event
 from .serializers import EventSerializer
-from django.views.decorators.cache import cache_page
-from django.utils.decorators import method_decorator
+
 
 
 class EventListView(APIView):
